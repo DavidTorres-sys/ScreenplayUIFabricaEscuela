@@ -12,5 +12,5 @@ Feature: Detailed display of purchase costs
 
   Scenario: Calculate the total amount
     Given that the system has displayed the breakdown of the purchase costs
-    When the system adds up the value of each item on the invoice*
+    When the system adds up the value of each item on the invoice
     Then the system should calculate the total amount of the purchase
