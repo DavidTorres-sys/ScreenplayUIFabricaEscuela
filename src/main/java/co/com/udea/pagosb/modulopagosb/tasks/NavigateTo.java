@@ -5,11 +5,11 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Open;
 
-public class NavigateToPurchaseSummaryPage implements Task {
+public class NavigateTo implements Task {
 
     private final String url;
 
-    public NavigateToPurchaseSummaryPage(String url) {
+    public NavigateTo(String url) {
         this.url = url;
     }
 
@@ -20,7 +20,7 @@ public class NavigateToPurchaseSummaryPage implements Task {
         );
     }
 
-    public static NavigateToPurchaseSummaryPage to(String url) {
-        return Tasks.instrumented(NavigateToPurchaseSummaryPage.class, url);
+    public static NavigateTo to(String url) {
+        return Tasks.instrumented(NavigateTo.class, url);
     }
 }
