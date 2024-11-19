@@ -1,16 +1,20 @@
 package co.com.udea.pagosb.modulopagosb.stepdefinitions;
 
+import co.com.udea.pagosb.modulopagosb.tasks.FindThe;
+import co.com.udea.pagosb.modulopagosb.tasks.NavigateToPurchaseSummaryPage;
+import co.com.udea.pagosb.modulopagosb.userinterfaces.UserPage;
+import co.com.udea.pagosb.modulopagosb.utils.Constants;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
+import net.thucydides.core.webdriver.ThucydidesWebDriverSupport;
 
 public class GetPaymentDetailsStepDefinition {
-
-    private final Actor actor = Actor.named("user");
 
     /**
      * Setup method executed before the tests begin. Configures the actor and RestAssured settings.
@@ -19,12 +23,15 @@ public class GetPaymentDetailsStepDefinition {
     @Before
     public void config() {
         OnStage.setTheStage(new OnlineCast());
-        OnStage.theActorCalled("user");
+        Actor actor = OnStage.theActorCalled("actor");
+        actor.can(BrowseTheWeb.with(ThucydidesWebDriverSupport.getDriver()));
     }
 
     @Given("that the user is on the purchase summary page")
     public void thatTheUserIsOnThePurchaseSummaryPage() {
-        throw new io.cucumber.java.PendingException();
+        OnStage.theActorCalled("actor").attemptsTo(
+                NavigateToPurchaseSummaryPage.to(Constants.PURCHASE_SUMMARY_URL)
+        );
     }
 
     @When("the user displays the purchase details tab")
