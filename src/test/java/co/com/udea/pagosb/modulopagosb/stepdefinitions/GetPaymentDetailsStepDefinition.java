@@ -1,6 +1,7 @@
 package co.com.udea.pagosb.modulopagosb.stepdefinitions;
 
 import co.com.udea.pagosb.modulopagosb.questions.ValidateText;
+import co.com.udea.pagosb.modulopagosb.tasks.FindThe;
 import co.com.udea.pagosb.modulopagosb.tasks.NavigateToPurchaseSummaryPage;
 import co.com.udea.pagosb.modulopagosb.userinterfaces.UserPage;
 import co.com.udea.pagosb.modulopagosb.utils.Constants;
@@ -48,7 +49,15 @@ public class GetPaymentDetailsStepDefinition {
 
     @When("the user displays the purchase details tab")
     public void theUserDisplaysThePurchaseDetailsTab() {
-
+        OnStage.theActorCalled("actor").attemptsTo(
+                FindThe.element(UserPage.FLIGHT_FARE_DROPDOWN)
+        );
+        OnStage.theActorCalled("actor").attemptsTo(
+                FindThe.element(UserPage.TAXES_DROPDOWN)
+        );
+        OnStage.theActorCalled("actor").attemptsTo(
+                FindThe.element(UserPage.ADDITIONAL_CHARGES_DROPDOWN)
+        );
     }
 
     @Then("the system should display the detailed breakdown of the purchase, including taxes, fees and additional charges")
