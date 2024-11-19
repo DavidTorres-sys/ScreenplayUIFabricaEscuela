@@ -2,7 +2,7 @@ package co.com.udea.pagosb.modulopagosb.stepdefinitions;
 
 import co.com.udea.pagosb.modulopagosb.questions.ParameterToValidate;
 import co.com.udea.pagosb.modulopagosb.tasks.FindThe;
-import co.com.udea.pagosb.modulopagosb.tasks.NavigateToPurchaseSummaryPage;
+import co.com.udea.pagosb.modulopagosb.tasks.NavigateTo;
 import co.com.udea.pagosb.modulopagosb.userinterfaces.UserPage;
 import co.com.udea.pagosb.modulopagosb.utils.Constants;
 import io.cucumber.java.Before;
@@ -40,7 +40,7 @@ public class GetPaymentDetailsStepDefinition {
     @Given("that the user is on the purchase summary page")
     public void thatTheUserIsOnThePurchaseSummaryPage() {
         actor.attemptsTo(
-                NavigateToPurchaseSummaryPage.to(this.url)
+                NavigateTo.to(this.url)
         );
         actor.should(seeThat(ParameterToValidate.
                         with(Constants.PURCHASE_SUMMARY_PAGE_TITLE_STRING, Text.of(UserPage.PURCHASE_SUMMARY_PAGE_TITLE).answeredBy(actor)),
