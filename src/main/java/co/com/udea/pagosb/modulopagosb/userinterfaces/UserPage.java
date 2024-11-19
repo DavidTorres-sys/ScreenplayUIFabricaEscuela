@@ -13,13 +13,13 @@ public class UserPage {
             .locatedBy("//*[@id=\"__next\"]/main/div/div[1]/div/div[1]/div[3]/div/div[3]/div");
 
     public static final Target TAXES_VALUE = Target.the("Taxes value")
-            .locatedBy("//*[@id=\"__next\"]/main/div/div[1]/div/div[1]/div[3]/div/div[2]/ul/li/p[2]");
+            .locatedBy("//*[@id=\"__next\"]/main/div/div[1]/div/div[1]/div[3]/div/div[3]/ul/li/p[2]");
 
     public static final Target ADDITIONAL_CHARGES_DROPDOWN = Target.the("Additional charges dropdown")
             .locatedBy("//*[@id=\"__next\"]/main/div/div[1]/div/div[1]/div[3]/div/div[2]/div");
 
     public static final Target ADDITIONAL_CHARGES_VALUE = Target.the("Additional charges value")
-            .locatedBy("//*[@id=\"__next\"]/main/div/div[1]/div/div[1]/div[3]/div/div[3]/ul/li/p[2]");
+            .locatedBy("//*[@id=\"__next\"]/main/div/div[1]/div/div[1]/div[3]/div/div[2]/ul/li/p[2]");
 
     public static final Target PURCHASE_SUMMARY_PAGE_TITLE = Target.the("Detalles de tu vuelo")
             .locatedBy("//*[@id=\"__next\"]/main/div/div[1]/div/div[1]/div[1]/div/h2");

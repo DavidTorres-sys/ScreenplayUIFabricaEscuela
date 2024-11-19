@@ -13,6 +13,7 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
+import net.serenitybdd.screenplay.questions.Text;
 import net.thucydides.core.webdriver.ThucydidesWebDriverSupport;
 import net.thucydides.model.environment.SystemEnvironmentVariables;
 import net.thucydides.model.util.EnvironmentVariables;
@@ -24,45 +25,54 @@ public class GetPaymentDetailsStepDefinition {
 
     private final EnvironmentVariables environmentVariables = SystemEnvironmentVariables.createEnvironmentVariables();
     private final String url = environmentVariables.getProperty("webdriver.base.url");
+    private Actor actor;
 
     /**
-     * Setup method executed before the tests begin. Configures the actor and RestAssured settings.
-     * This method ensures that the actor is ready to perform tasks
+     * Setup method executed before the tests begin. Configures the actor and browser.
      */
     @Before
     public void config() {
         OnStage.setTheStage(new OnlineCast());
-        Actor actor = OnStage.theActorCalled("actor");
+        actor = OnStage.theActorCalled("actor");
         actor.can(BrowseTheWeb.with(ThucydidesWebDriverSupport.getDriver()));
     }
 
     @Given("that the user is on the purchase summary page")
     public void thatTheUserIsOnThePurchaseSummaryPage() {
-        OnStage.theActorCalled("actor").attemptsTo(
+        actor.attemptsTo(
                 NavigateToPurchaseSummaryPage.to(this.url)
         );
-        OnStage.theActorCalled("actor")
-                .should(seeThat(ParameterToValidate
-                        .with(Constants.PURCHASE_SUMMARY_PAGE_TITLE_STRING, UserPage.PURCHASE_SUMMARY_PAGE_TITLE.toString()), is(true))
-        );
+        actor.should(seeThat(ParameterToValidate.
+                        with(Constants.PURCHASE_SUMMARY_PAGE_TITLE_STRING, Text.of(UserPage.PURCHASE_SUMMARY_PAGE_TITLE).answeredBy(actor)),
+                        is(true)));
     }
 
     @When("the user displays the purchase details tab")
     public void theUserDisplaysThePurchaseDetailsTab() {
-        OnStage.theActorCalled("actor").attemptsTo(
-                FindThe.element(UserPage.FLIGHT_FARE_DROPDOWN)
-        );
-        OnStage.theActorCalled("actor").attemptsTo(
-                FindThe.element(UserPage.TAXES_DROPDOWN)
-        );
-        OnStage.theActorCalled("actor").attemptsTo(
+        actor.attemptsTo(
+                FindThe.element(UserPage.FLIGHT_FARE_DROPDOWN),
+                FindThe.element(UserPage.TAXES_DROPDOWN),
                 FindThe.element(UserPage.ADDITIONAL_CHARGES_DROPDOWN)
         );
     }
 
     @Then("the system should display the detailed breakdown of the purchase, including taxes, fees and additional charges")
     public void theSystemShouldDisplayTheDetailedBreakdownOfThePurchaseIncludingTaxesFeesAndAdditionalCharges() {
-
+        actor.should(seeThat(
+                ParameterToValidate.
+                        with(Text.of(UserPage.FLIGHT_FARE_VALUE).answeredBy(actor), Constants.FLIGHT_FARE_VALUE_STRING),
+                        is(true)
+        ));
+        actor.should(seeThat(
+                ParameterToValidate.
+                        with(Text.of(UserPage.TAXES_VALUE).answeredBy(actor), Constants.TAXES_VALUE_STRING),
+                        is(true)
+        ));
+        actor.should(seeThat(
+                ParameterToValidate.
+                        with(Text.of(UserPage.ADDITIONAL_CHARGES_VALUE).answeredBy(actor), Constants.ADDITIONAL_CHARGES_VALUE_STRING),
+                        is(true)
+        ));
     }
 
     @Given("that the system has displayed the breakdown of the purchase costs")
@@ -77,5 +87,6 @@ public class GetPaymentDetailsStepDefinition {
 
     @Then("the system should calculate the total amount of the purchase")
     public void theSystemShouldCalculateTheTotalAmountOfThePurchase() {
+
     }
 }
