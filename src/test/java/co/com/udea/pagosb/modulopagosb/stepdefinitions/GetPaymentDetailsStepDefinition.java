@@ -1,6 +1,6 @@
 package co.com.udea.pagosb.modulopagosb.stepdefinitions;
 
-import co.com.udea.pagosb.modulopagosb.questions.ValidateText;
+import co.com.udea.pagosb.modulopagosb.questions.ParameterToValidate;
 import co.com.udea.pagosb.modulopagosb.tasks.FindThe;
 import co.com.udea.pagosb.modulopagosb.tasks.NavigateToPurchaseSummaryPage;
 import co.com.udea.pagosb.modulopagosb.userinterfaces.UserPage;
@@ -42,7 +42,7 @@ public class GetPaymentDetailsStepDefinition {
                 NavigateToPurchaseSummaryPage.to(this.url)
         );
         OnStage.theActorCalled("actor")
-                .should(seeThat(ValidateText
+                .should(seeThat(ParameterToValidate
                         .with(Constants.PURCHASE_SUMMARY_PAGE_TITLE_STRING, UserPage.PURCHASE_SUMMARY_PAGE_TITLE.toString()), is(true))
         );
     }
