@@ -1,6 +1,6 @@
 package co.com.udea.pagosb.modulopagosb.stepdefinitions;
 
-import co.com.udea.pagosb.modulopagosb.tasks.FindThe;
+import co.com.udea.pagosb.modulopagosb.questions.ValidateText;
 import co.com.udea.pagosb.modulopagosb.tasks.NavigateToPurchaseSummaryPage;
 import co.com.udea.pagosb.modulopagosb.userinterfaces.UserPage;
 import co.com.udea.pagosb.modulopagosb.utils.Constants;
@@ -13,8 +13,16 @@ import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 import net.thucydides.core.webdriver.ThucydidesWebDriverSupport;
+import net.thucydides.model.environment.SystemEnvironmentVariables;
+import net.thucydides.model.util.EnvironmentVariables;
+
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
+import static org.hamcrest.Matchers.is;
 
 public class GetPaymentDetailsStepDefinition {
+
+    private final EnvironmentVariables environmentVariables = SystemEnvironmentVariables.createEnvironmentVariables();
+    private final String url = environmentVariables.getProperty("webdriver.base.url");
 
     /**
      * Setup method executed before the tests begin. Configures the actor and RestAssured settings.
@@ -30,7 +38,11 @@ public class GetPaymentDetailsStepDefinition {
     @Given("that the user is on the purchase summary page")
     public void thatTheUserIsOnThePurchaseSummaryPage() {
         OnStage.theActorCalled("actor").attemptsTo(
-                NavigateToPurchaseSummaryPage.to(Constants.PURCHASE_SUMMARY_URL)
+                NavigateToPurchaseSummaryPage.to(this.url)
+        );
+        OnStage.theActorCalled("actor")
+                .should(seeThat(ValidateText
+                        .with(Constants.PURCHASE_SUMMARY_PAGE_TITLE_STRING, UserPage.PURCHASE_SUMMARY_PAGE_TITLE.toString()), is(true))
         );
     }
 
