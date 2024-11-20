@@ -30,9 +30,4 @@ public class UserPage {
     public static final Target BTN_CONTINUE = Target.the("Continue button")
             .locatedBy("//*[@id=\"__next\"]/main/div/div[2]/div/div[3]/a/button");
 
-    public static final Target BTN_CONFIRM_PURCHASE = Target.the("Confirm purchase button")
-            .locatedBy("//*[@id=\"__next\"]/main/main/div[3]/button");
-
-    public static final Target PURCHASE_SUCCESSFUL_MESSAGE = Target.the("Purchase successful message")
-            .locatedBy("//*[@id=\"successfull-buy-title\"]");
 }

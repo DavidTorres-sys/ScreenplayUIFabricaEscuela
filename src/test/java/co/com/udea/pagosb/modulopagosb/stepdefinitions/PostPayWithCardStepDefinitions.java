@@ -3,7 +3,10 @@ package co.com.udea.pagosb.modulopagosb.stepdefinitions;
 import co.com.udea.pagosb.modulopagosb.questions.ParameterToValidate;
 import co.com.udea.pagosb.modulopagosb.tasks.FindThe;
 import co.com.udea.pagosb.modulopagosb.tasks.NavigateTo;
+import co.com.udea.pagosb.modulopagosb.tasks.ProvideCardDetails;
+import co.com.udea.pagosb.modulopagosb.userinterfaces.PaymentPage;
 import co.com.udea.pagosb.modulopagosb.userinterfaces.UserPage;
+import co.com.udea.pagosb.modulopagosb.utils.CardFormBuild;
 import co.com.udea.pagosb.modulopagosb.utils.Constants;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
@@ -58,13 +61,13 @@ public class PostPayWithCardStepDefinitions {
 
     @And("The user provides the card details \\(card number, expiration date, CVV)")
     public void theUserProvidesTheCardDetailsCardNumberExpirationDateCVV() {
-        
+        actor.attemptsTo(ProvideCardDetails.with(CardFormBuild.validForm()));
     }
 
     @Then("The transaction is completed successfully")
     public void theTransactionIsCompletedSuccessfully() {
         actor.attemptsTo(
-                FindThe.element(UserPage.BTN_CONFIRM_PURCHASE)
+                FindThe.element(PaymentPage.BTN_CONFIRM_PURCHASE)
         );
     }
 
@@ -72,20 +75,20 @@ public class PostPayWithCardStepDefinitions {
     public void theUserSeesAPaymentConfirmationMessage() {
         actor.should(seeThat(
                 ParameterToValidate.
-                        with(Text.of(UserPage.PURCHASE_SUCCESSFUL_MESSAGE).answeredBy(actor), Constants.PURCHASE_SUCCESSFUL_MESSAGE_STRING),
+                        with(Text.of(PaymentPage.PURCHASE_SUCCESSFUL_MESSAGE).answeredBy(actor), Constants.PURCHASE_SUCCESSFUL_MESSAGE_STRING),
                 is(true)
         ));
     }
 
     @When("The user provides invalid card information \\(invalid card number, expired expiration date, incorrect CVV)")
     public void theUserProvidesInvalidCardInformationInvalidCardNumberExpiredExpirationDateIncorrectCVV() {
-        
+        actor.attemptsTo(ProvideCardDetails.with(CardFormBuild.invalidForm()));
     }
 
     @Then("The transaction is not completed")
     public void theTransactionIsNotCompleted() {
         actor.attemptsTo(
-                FindThe.element(UserPage.BTN_CONFIRM_PURCHASE)
+                FindThe.element(PaymentPage.BTN_CONFIRM_PURCHASE)
         );
     }
 
