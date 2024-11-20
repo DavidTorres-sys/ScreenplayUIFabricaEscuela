@@ -6,11 +6,11 @@ import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.targets.Target;
 
-public class InteractWithElement implements Interaction {
+public class ClickElement implements Interaction {
 
     private final Target target;
 
-    public InteractWithElement(Target target) {
+    public ClickElement(Target target) {
         this.target = target;
     }
 
@@ -21,7 +21,7 @@ public class InteractWithElement implements Interaction {
         );
     }
 
-    public static InteractWithElement click(Target target) {
-        return Tasks.instrumented(InteractWithElement.class, target);
+    public static ClickElement click(Target target) {
+        return Tasks.instrumented(ClickElement.class, target);
     }
 }

@@ -1,9 +1,9 @@
 package co.com.udea.pagosb.modulopagosb.tasks;
 
+import co.com.udea.pagosb.modulopagosb.interactions.ClickElement;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Tasks;
-import co.com.udea.pagosb.modulopagosb.interactions.InteractWithElement;
 import net.serenitybdd.screenplay.targets.Target;
 
 public class FindThe implements Task {
@@ -17,7 +17,7 @@ public class FindThe implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                InteractWithElement.click(target)
+                ClickElement.click(target)
         );
     }
 
