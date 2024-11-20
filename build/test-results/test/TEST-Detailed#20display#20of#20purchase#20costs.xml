@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Detailed display of purchase costs" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-11-19T23:29:20" hostname="LUCAS" time="5.872">
+<testsuite name="Detailed display of purchase costs" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-11-20T01:47:49" hostname="LUCAS" time="10.79">
   <properties/>
-  <testcase name="Display the detailed costs of the purchase" classname="Detailed display of purchase costs" time="5.806"/>
-  <testcase name="Calculate the total amount" classname="Detailed display of purchase costs" time="0.066"/>
-  <system-out><![CDATA[165.800COP 165.800COP
-77.608COP 77.608COP
-0.00COP 0.00COP
-]]></system-out>
+  <testcase name="Display the detailed costs of the purchase" classname="Detailed display of purchase costs" time="10.272"/>
+  <testcase name="Calculate the total amount" classname="Detailed display of purchase costs" time="0.517"/>
+  <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[[Test worker] INFO  - 
   _____   ___   ___   _____     ___   _____     _     ___   _____   ___   ___  
  |_   _| | __| / __| |_   _|   / __| |_   _|   /_\   | _ \ |_   _| | __| |   \ 
@@ -17,10 +14,10 @@ Display the detailed costs of the purchase(detailed-display-of-purchase-costs;di
 --------------------------------------------------------------------------------
 [Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ChromeDriverProvider - Starting Chrome driver instance with capabilities:
 [Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ChromeDriverProvider - Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [--start-maximized, --test-type, --no-sandbox, --ignore-certificate-errors, \n                   --disa..., --disable-default-apps, --disable-extensions-file-a..., \n                   --inco..., --disable-infobars,--disabl..., --remote-allow-origins=*], extensions: []}}
-nov. 19, 2024 6:29:22 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+nov. 19, 2024 8:47:53 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 ADVERTENCIA: Unable to find CDP implementation matching 131
-nov. 19, 2024 6:29:22 P. M. org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
-ADVERTENCIA: Unable to find version of CDP to use for 131.0.6778.70. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.16.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+nov. 19, 2024 8:47:53 P. M. org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+ADVERTENCIA: Unable to find version of CDP to use for 131.0.6778.71. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.16.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
 [Test worker] INFO  - ?[92m
   _____   ___   ___   _____     ___     _     ___   ___   ___   ___  
  |_   _| | __| / __| |_   _|   | _ \   /_\   / __| / __| | __| |   \ 

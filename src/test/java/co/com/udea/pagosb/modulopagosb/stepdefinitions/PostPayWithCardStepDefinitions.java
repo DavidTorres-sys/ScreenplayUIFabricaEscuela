@@ -6,6 +6,7 @@ import co.com.udea.pagosb.modulopagosb.tasks.NavigateTo;
 import co.com.udea.pagosb.modulopagosb.userinterfaces.UserPage;
 import co.com.udea.pagosb.modulopagosb.utils.Constants;
 import io.cucumber.java.Before;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -21,7 +22,7 @@ import net.thucydides.model.util.EnvironmentVariables;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static org.hamcrest.Matchers.is;
 
-public class GetPaymentDetailsStepDefinition {
+public class PostPayWithCardStepDefinitions {
 
     private final EnvironmentVariables environmentVariables = SystemEnvironmentVariables.createEnvironmentVariables();
     private final String url = environmentVariables.getProperty("webdriver.base.url");
@@ -37,54 +38,58 @@ public class GetPaymentDetailsStepDefinition {
         actor.can(BrowseTheWeb.with(ThucydidesWebDriverSupport.getDriver()));
     }
 
-    @Given("that the user is on the purchase summary page")
-    public void thatTheUserIsOnThePurchaseSummaryPage() {
+    @Given("The user is on the payment page")
+    public void theUserIsOnThePaymentPage() {
         actor.attemptsTo(NavigateTo.to(this.url));
         actor.should(seeThat(ParameterToValidate.
                         with(Constants.PURCHASE_SUMMARY_PAGE_TITLE_STRING, Text.of(UserPage.PURCHASE_SUMMARY_PAGE_TITLE).answeredBy(actor)),
-                        is(true)));
+                is(true)));
     }
 
-    @When("the user displays the purchase details tab")
-    public void theUserDisplaysThePurchaseDetailsTab() {
+    @When("The user selects the option to pay with a credit card or debit card")
+    public void theUserSelectsTheOptionToPayWithADebitCard() {
         actor.attemptsTo(
-                FindThe.element(UserPage.FLIGHT_FARE_DROPDOWN),
-                FindThe.element(UserPage.TAXES_DROPDOWN),
-                FindThe.element(UserPage.ADDITIONAL_CHARGES_DROPDOWN)
+                FindThe.element(UserPage.BTN_PAYMENT_WITH_CARD)
+        );
+        actor.attemptsTo(
+                FindThe.element(UserPage.BTN_CONTINUE)
         );
     }
 
-    @Then("the system should display the detailed breakdown of the purchase, including taxes, fees and additional charges")
-    public void theSystemShouldDisplayTheDetailedBreakdownOfThePurchaseIncludingTaxesFeesAndAdditionalCharges() {
+    @And("The user provides the card details \\(card number, expiration date, CVV)")
+    public void theUserProvidesTheCardDetailsCardNumberExpirationDateCVV() {
+        
+    }
+
+    @Then("The transaction is completed successfully")
+    public void theTransactionIsCompletedSuccessfully() {
+        actor.attemptsTo(
+                FindThe.element(UserPage.BTN_CONFIRM_PURCHASE)
+        );
+    }
+
+    @And("The user sees a payment confirmation message")
+    public void theUserSeesAPaymentConfirmationMessage() {
         actor.should(seeThat(
                 ParameterToValidate.
-                        with(Text.of(UserPage.FLIGHT_FARE_VALUE).answeredBy(actor), Constants.FLIGHT_FARE_VALUE_STRING),
-                        is(true)
-        ));
-        actor.should(seeThat(
-                ParameterToValidate.
-                        with(Text.of(UserPage.TAXES_VALUE).answeredBy(actor), Constants.TAXES_VALUE_STRING),
-                        is(true)
-        ));
-        actor.should(seeThat(
-                ParameterToValidate.
-                        with(Text.of(UserPage.ADDITIONAL_CHARGES_VALUE).answeredBy(actor), Constants.ADDITIONAL_CHARGES_VALUE_STRING),
-                        is(true)
+                        with(Text.of(UserPage.PURCHASE_SUCCESSFUL_MESSAGE).answeredBy(actor), Constants.PURCHASE_SUCCESSFUL_MESSAGE_STRING),
+                is(true)
         ));
     }
 
-    @Given("that the system has displayed the breakdown of the purchase costs")
-    public void thatTheSystemHasDisplayedTheBreakdownOfThePurchaseCosts() {
-
+    @When("The user provides invalid card information \\(invalid card number, expired expiration date, incorrect CVV)")
+    public void theUserProvidesInvalidCardInformationInvalidCardNumberExpiredExpirationDateIncorrectCVV() {
+        
     }
 
-    @When("the system adds up the value of each item on the invoice")
-    public void theSystemAddsUpTheValueOfEachItemOnTheInvoice() {
-
+    @Then("The transaction is not completed")
+    public void theTransactionIsNotCompleted() {
+        actor.attemptsTo(
+                FindThe.element(UserPage.BTN_CONFIRM_PURCHASE)
+        );
     }
 
-    @Then("the system should calculate the total amount of the purchase")
-    public void theSystemShouldCalculateTheTotalAmountOfThePurchase() {
-
+    @And("The user sees an error message indicating that the provided information is invalid")
+    public void theUserSeesAnErrorMessageIndicatingThatTheProvidedInformationIsInvalid() {
     }
 }
