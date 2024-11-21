@@ -21,6 +21,27 @@ public class UserPage {
     public static final Target ADDITIONAL_CHARGES_VALUE = Target.the("Additional charges value")
             .locatedBy("//*[@id=\"__next\"]/main/div/div[1]/div/div[1]/div[3]/div/div[2]/ul/li/p[2]");
 
+    public static final Target PAYMENT_MENU = Target.the("Payment selection menu")
+            .locatedBy("/html/body/div/main/div/div[2]/div/div[1]/div");
+
+    public static final Target BANCOLOMBIA_OPTION = Target.the("Payment selection menu")
+            .locatedBy("/html/body/div/main/div/div[2]/div/div[1]/form/label[1]/p");
+
+    public static final Target PAYPAL_OPTION = Target.the("Payment selection menu")
+            .locatedBy("/html/body/div/main/div/div[2]/div/div[1]/form/label[2]/p");
+
+    public static final Target PAYU_OPTION = Target.the("Payment selection menu")
+            .locatedBy("/html/body/div/main/div/div[2]/div/div[1]/form/label[3]/p");
+
+    public static final Target PSE_OPTION = Target.the("Payment selection menu")
+            .locatedBy("/html/body/div/main/div/div[2]/div/div[1]/form/label[4]/p");
+
+    public static final Target  PAYMENT_CONTINUE_BUTTON = Target.the("Payment selection menu")
+            .locatedBy("/html/body/div/main/div/div[2]/div/div[3]/a/button");
+
+    public static final Target  PAYMENT_GATEWAY_NOT_SELECTED_MESSAGE = Target.the("Payment selection menu")
+            .locatedBy("/html/body/div/main/div/div[2]/div/div[1]/div/div[1]/div[2]/p");
+
     public static final Target PURCHASE_SUMMARY_PAGE_TITLE = Target.the("Detalles de tu vuelo")
             .locatedBy("//*[@id=\"__next\"]/main/div/div[1]/div/div[1]/div[1]/div/h2");
 
