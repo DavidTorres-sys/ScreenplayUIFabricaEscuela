@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">12.113s</div>
+<div class="counter">15.685s</div>
 <p>duration</p>
 </div>
 </td>
@@ -77,14 +77,14 @@
 <h3 class="failures">User enters invalid card information</h3>
 <span class="code">
 <pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@id=&quot;user-name&quot;]&quot;}
-  (Session info: chrome=131.0.6778.71)
+  (Session info: chrome=131.0.6778.86)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.16.1', revision: '9b4c83354e'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [af739d311333967ffa5c1ed68376ada9, findElement {using=xpath, value=//*[@id=&quot;user-name&quot;]}]
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 131.0.6778.71, chrome: {chromedriverVersion: 131.0.6778.85 (3d81e41b6f3a..., userDataDir: C:\Users\lucas\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57207}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57207/devtoo..., se:cdpVersion: 131.0.6778.71, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: af739d311333967ffa5c1ed68376ada9
+Command: [418d7764ec531827cf250e59cf9c85e1, findElement {using=xpath, value=//*[@id=&quot;user-name&quot;]}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 131.0.6778.86, chrome: {chromedriverVersion: 131.0.6778.85 (3d81e41b6f3a..., userDataDir: C:\Users\lucas\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62150}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62150/devtoo..., se:cdpVersion: 131.0.6778.86, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 418d7764ec531827cf250e59cf9c85e1
 	at java.base@17.0.11/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base@17.0.11/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base@17.0.11/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -111,7 +111,7 @@ Session ID: af739d311333967ffa5c1ed68376ada9
 	at app//net.serenitybdd.screenplay.actions.EnterValueIntoTarget.lambda$performAs$0(EnterValueIntoTarget.java:19)
 	at java.base@17.0.11/java.util.Optional.ifPresent(Optional.java:178)
 	at app//net.serenitybdd.screenplay.actions.EnterValueIntoTarget.performAs(EnterValueIntoTarget.java:18)
-	at app//net.serenitybdd.screenplay.actions.EnterValueIntoTarget$ByteBuddy$CDMLWI2L.performAs$accessor$9yAGTDBq(Unknown Source)
+	at app//net.serenitybdd.screenplay.actions.EnterValueIntoTarget$ByteBuddy$DLJzEE9K.performAs$accessor$8Rq9G707(Unknown Source)
 	at java.base@17.0.11/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base@17.0.11/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base@17.0.11/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -123,13 +123,13 @@ Session ID: af739d311333967ffa5c1ed68376ada9
 	at app//net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:205)
 	at app//net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:93)
 	at app//net.thucydides.core.steps.ProxyConfiguration$InterceptorDispatcher.intercept(ProxyConfiguration.java:51)
-	at app//net.serenitybdd.screenplay.actions.EnterValueIntoTarget$ByteBuddy$CDMLWI2L.performAs(Unknown Source)
+	at app//net.serenitybdd.screenplay.actions.EnterValueIntoTarget$ByteBuddy$DLJzEE9K.performAs(Unknown Source)
 	at app//net.serenitybdd.screenplay.Actor.performTask(Actor.java:299)
 	at app//net.serenitybdd.screenplay.Actor.perform(Actor.java:274)
 	at app//net.serenitybdd.screenplay.Actor.attemptsTo(Actor.java:215)
 	at app//net.serenitybdd.screenplay.Actor.attemptsTo(Actor.java:222)
 	at app//co.com.udea.pagosb.modulopagosb.interactions.EnterValue.performAs(EnterValue.java:26)
-	at app//co.com.udea.pagosb.modulopagosb.interactions.EnterValue$ByteBuddy$MCDHwAUj.performAs$accessor$TsR3qhiR(Unknown Source)
+	at app//co.com.udea.pagosb.modulopagosb.interactions.EnterValue$ByteBuddy$MM4k5V8r.performAs$accessor$9zK2WP7l(Unknown Source)
 	at java.base@17.0.11/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base@17.0.11/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base@17.0.11/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -141,13 +141,13 @@ Session ID: af739d311333967ffa5c1ed68376ada9
 	at app//net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:205)
 	at app//net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:93)
 	at app//net.thucydides.core.steps.ProxyConfiguration$InterceptorDispatcher.intercept(ProxyConfiguration.java:51)
-	at app//co.com.udea.pagosb.modulopagosb.interactions.EnterValue$ByteBuddy$MCDHwAUj.performAs(Unknown Source)
+	at app//co.com.udea.pagosb.modulopagosb.interactions.EnterValue$ByteBuddy$MM4k5V8r.performAs(Unknown Source)
 	at app//net.serenitybdd.screenplay.Actor.performTask(Actor.java:299)
 	at app//net.serenitybdd.screenplay.Actor.perform(Actor.java:274)
 	at app//net.serenitybdd.screenplay.Actor.attemptsTo(Actor.java:215)
 	at app//net.serenitybdd.screenplay.Actor.attemptsTo(Actor.java:222)
 	at app//co.com.udea.pagosb.modulopagosb.tasks.ProvideCardDetails.performAs(ProvideCardDetails.java:27)
-	at app//co.com.udea.pagosb.modulopagosb.tasks.ProvideCardDetails$ByteBuddy$5tCsz1T1.performAs$accessor$1dovDNOR(Unknown Source)
+	at app//co.com.udea.pagosb.modulopagosb.tasks.ProvideCardDetails$ByteBuddy$isIxw1Tp.performAs$accessor$nzCfd5it(Unknown Source)
 	at java.base@17.0.11/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base@17.0.11/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base@17.0.11/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -159,13 +159,13 @@ Session ID: af739d311333967ffa5c1ed68376ada9
 	at app//net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:205)
 	at app//net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:93)
 	at app//net.thucydides.core.steps.ProxyConfiguration$InterceptorDispatcher.intercept(ProxyConfiguration.java:51)
-	at app//co.com.udea.pagosb.modulopagosb.tasks.ProvideCardDetails$ByteBuddy$5tCsz1T1.performAs(Unknown Source)
+	at app//co.com.udea.pagosb.modulopagosb.tasks.ProvideCardDetails$ByteBuddy$isIxw1Tp.performAs(Unknown Source)
 	at app//net.serenitybdd.screenplay.Actor.performTask(Actor.java:299)
 	at app//net.serenitybdd.screenplay.Actor.perform(Actor.java:274)
 	at app//net.serenitybdd.screenplay.Actor.attemptsTo(Actor.java:215)
 	at app//net.serenitybdd.screenplay.Actor.attemptsTo(Actor.java:222)
 	at app//co.com.udea.pagosb.modulopagosb.stepdefinitions.PostPayWithCardStepDefinitions.theUserProvidesInvalidCardInformationInvalidCardNumberExpiredExpirationDateIncorrectCVV(PostPayWithCardStepDefinitions.java:85)
-	at ✽.The user provides invalid card information (invalid card number, expired expiration date, incorrect CVV)(file:///C:/Users/lucas/Desktop/UdeA/calidad/screenplayux/src/test/resources/features/post_pay_with_card.feature:16)
+	at ✽.The user provides invalid card information (invalid card number, expired expiration date, incorrect CVV)(file:///C:/Users/lucas/Desktop/UdeA/calidad/screenplayux/src/test/resources/features/post_pay_with_card.feature:15)
 </pre>
 </span>
 </div>
@@ -182,12 +182,12 @@ Session ID: af739d311333967ffa5c1ed68376ada9
 </thead>
 <tr>
 <td class="success">User completes the transaction using a credit card or debit card</td>
-<td class="success">8.671s</td>
+<td class="success">12.222s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="failures">User enters invalid card information</td>
-<td class="failures">3.442s</td>
+<td class="failures">3.463s</td>
 <td class="failures">failed</td>
 </tr>
 </table>
@@ -205,10 +205,10 @@ User completes the transaction using a credit card or debit card(make-payment-wi
 --------------------------------------------------------------------------------
 [Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ChromeDriverProvider - Starting Chrome driver instance with capabilities:
 [Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ChromeDriverProvider - Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [--start-maximized, --test-type, --no-sandbox, --ignore-certificate-errors, \n                   --disa..., --disable-default-apps, --disable-extensions-file-a..., \n                   --inco..., --disable-infobars,--disabl..., --remote-allow-origins=*], extensions: []}}
-nov. 20, 2024 11:51:45 A. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+nov. 24, 2024 1:28:43 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 ADVERTENCIA: Unable to find CDP implementation matching 131
-nov. 20, 2024 11:51:45 A. M. org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
-ADVERTENCIA: Unable to find version of CDP to use for 131.0.6778.71. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.16.1` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+nov. 24, 2024 1:28:43 P. M. org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+ADVERTENCIA: Unable to find version of CDP to use for 131.0.6778.86. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.16.1` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
 [Test worker] INFO  - ?[92m
   _____   ___   ___   _____     ___     _     ___   ___   ___   ___  
  |_   _| | __| / __| |_   _|   | _ \   /_\   / __| / __| | __| |   \ 
@@ -246,7 +246,7 @@ User enters invalid card information
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.5</a> at 20/11/2024, 11:51:57 a. m.</p>
+<a href="http://www.gradle.org">Gradle 8.5</a> at 24/11/2024, 1:28:53 p. m.</p>
 </div>
 </div>
 </body>

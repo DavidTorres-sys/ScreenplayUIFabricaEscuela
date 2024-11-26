@@ -3,7 +3,6 @@
 
 Feature: Make payment with debit or credit card
 
-
   Scenario: User completes the transaction using a credit card or debit card
     Given The user is on the payment page
     When The user selects the option to pay with a credit card or debit card
