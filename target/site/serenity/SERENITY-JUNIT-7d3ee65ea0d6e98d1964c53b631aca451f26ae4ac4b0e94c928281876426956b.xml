@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="2" failures="0" name="Detailed display of purchase costs" skipped="0" tests="2" time="0.09" timestamp="2024-11-19 04:15:26"><testcase name="Display the detailed costs of the purchase"><error message="co.com.udea.pagosb.modulopagosb.stepdefinitions.GetPaymentDetailsStepDefinition.&lt;init&gt;()" type="java.lang.NoSuchMethodException">co.com.udea.pagosb.modulopagosb.stepdefinitions.GetPaymentDetailsStepDefinition.&lt;init&gt;()</error><system-err>co.com.udea.pagosb.modulopagosb.stepdefinitions.GetPaymentDetailsStepDefinition.&lt;init&gt;()&#13;
-worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)&#13;
-worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)&#13;
-</system-err></testcase><testcase name="Calculate the total amount"><error message="co.com.udea.pagosb.modulopagosb.stepdefinitions.GetPaymentDetailsStepDefinition.&lt;init&gt;()" type="java.lang.NoSuchMethodException">co.com.udea.pagosb.modulopagosb.stepdefinitions.GetPaymentDetailsStepDefinition.&lt;init&gt;()</error><system-err>co.com.udea.pagosb.modulopagosb.stepdefinitions.GetPaymentDetailsStepDefinition.&lt;init&gt;()&#13;
-worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)&#13;
-worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)&#13;
-</system-err></testcase></testsuite>

@@ -1,6 +1,7 @@
 package co.com.udea.pagosb.modulopagosb.stepdefinitions;
 
 import co.com.udea.pagosb.modulopagosb.questions.ParameterToValidate;
+import co.com.udea.pagosb.modulopagosb.tasks.CalculateTotal;
 import co.com.udea.pagosb.modulopagosb.tasks.FindThe;
 import co.com.udea.pagosb.modulopagosb.tasks.NavigateTo;
 import co.com.udea.pagosb.modulopagosb.userinterfaces.UserPage;
@@ -75,16 +76,37 @@ public class GetPaymentDetailsStepDefinition {
 
     @Given("that the system has displayed the breakdown of the purchase costs")
     public void thatTheSystemHasDisplayedTheBreakdownOfThePurchaseCosts() {
-
+        actor.should(seeThat(
+                ParameterToValidate.
+                        with(Text.of(UserPage.FLIGHT_FARE_VALUE).answeredBy(actor), Constants.FLIGHT_FARE_VALUE_STRING),
+                is(true)
+        ));
+        actor.should(seeThat(
+                ParameterToValidate.
+                        with(Text.of(UserPage.TAXES_VALUE).answeredBy(actor), Constants.TAXES_VALUE_STRING),
+                is(true)
+        ));
+        actor.should(seeThat(
+                ParameterToValidate.
+                        with(Text.of(UserPage.ADDITIONAL_CHARGES_VALUE).answeredBy(actor), Constants.ADDITIONAL_CHARGES_VALUE_STRING),
+                is(true)
+        ));
     }
 
     @When("the system adds up the value of each item on the invoice")
     public void theSystemAddsUpTheValueOfEachItemOnTheInvoice() {
-
+        actor.attemptsTo(
+                FindThe.element(UserPage.FLIGHT_FARE_VALUE),
+                FindThe.element(UserPage.TAXES_VALUE),
+                FindThe.element(UserPage.ADDITIONAL_CHARGES_VALUE)
+        );
     }
 
     @Then("the system should calculate the total amount of the purchase")
     public void theSystemShouldCalculateTheTotalAmountOfThePurchase() {
-
+        actor.should(
+                seeThat("The displayed total matches the calculated total",
+                        CalculateTotal.matchesDisplayedTotal())
+        );
     }
 }
