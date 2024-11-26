@@ -16,7 +16,10 @@ public class GetCurrentUrl implements Question<String>
 
     @Override
     public String answeredBy(Actor actor) {
-            return driver.getCurrentUrl();
+        String fullUrl = driver.getCurrentUrl();
+        String[] domain = fullUrl.split("/");
+        return domain[2];
+
     }
 }
 
