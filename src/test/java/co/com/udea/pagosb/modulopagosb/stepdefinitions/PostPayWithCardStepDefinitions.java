@@ -62,16 +62,12 @@ public class PostPayWithCardStepDefinitions {
     @And("The user provides the card details \\(card number, expiration date, CVV)")
     public void theUserProvidesTheCardDetailsCardNumberExpirationDateCVV() {
         actor.attemptsTo(ProvideCardDetails.with(CardFormBuild.validForm()));
-    }
-
-    @Then("The transaction is completed successfully")
-    public void theTransactionIsCompletedSuccessfully() {
         actor.attemptsTo(
                 FindThe.element(PaymentPage.BTN_CONFIRM_PURCHASE)
         );
     }
 
-    @And("The user sees a payment confirmation message")
+    @Then("The user sees a payment confirmation message")
     public void theUserSeesAPaymentConfirmationMessage() {
         actor.should(seeThat(
                 ParameterToValidate.
@@ -80,19 +76,28 @@ public class PostPayWithCardStepDefinitions {
         ));
     }
 
-    @When("The user provides invalid card information \\(invalid card number, expired expiration date, incorrect CVV)")
-    public void theUserProvidesInvalidCardInformationInvalidCardNumberExpiredExpirationDateIncorrectCVV() {
-        actor.attemptsTo(ProvideCardDetails.with(CardFormBuild.invalidForm()));
+    @And("The user push the button to navegate to the next page")
+    public void theUserPushTheButtonToNavegateToTheNextPage() {
+        actor.attemptsTo(
+                FindThe.element(PaymentPage.BTN_BACK_TO_HOME)
+        );
     }
 
-    @Then("The transaction is not completed")
-    public void theTransactionIsNotCompleted() {
+    @And("The user provides invalid card information \\(invalid card number, expired expiration date, incorrect CVV)")
+    public void theUserProvidesInvalidCardInformationInvalidCardNumberExpiredExpirationDateIncorrectCVV() {
+        actor.attemptsTo(ProvideCardDetails.with(CardFormBuild.invalidForm()));
         actor.attemptsTo(
                 FindThe.element(PaymentPage.BTN_CONFIRM_PURCHASE)
         );
     }
 
-    @And("The user sees an error message indicating that the provided information is invalid")
+    @Then("The user sees an error message indicating that the provided information is invalid")
     public void theUserSeesAnErrorMessageIndicatingThatTheProvidedInformationIsInvalid() {
+        actor.should(seeThat(
+                ParameterToValidate.
+                        with(Text.of(PaymentPage.PURCHASE_UNSUCCESSFUL_MESSAGE).answeredBy(actor), Constants.PURCHASE_SUCCESSFUL_MESSAGE_STRING),
+                is(true)
+        ));
     }
+
 }

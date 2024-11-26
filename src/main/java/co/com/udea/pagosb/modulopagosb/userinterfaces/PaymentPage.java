@@ -23,4 +23,10 @@ public class PaymentPage {
 
     public static final Target PURCHASE_SUCCESSFUL_MESSAGE = Target.the("Purchase successful message")
             .locatedBy("//*[@id=\"successfull-buy-title\"]");
+
+    public static final Target PURCHASE_UNSUCCESSFUL_MESSAGE = Target.the("Purchase unsuccessful message")
+            .locatedBy("//*[@id=\"id-alert-title\"]");
+
+    public static final Target BTN_BACK_TO_HOME = Target.the("Back to home button")
+            .locatedBy("//*[@id=\"id-closeModal\"]");
 }

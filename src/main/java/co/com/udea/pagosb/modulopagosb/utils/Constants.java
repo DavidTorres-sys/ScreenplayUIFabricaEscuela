@@ -6,4 +6,5 @@ public class Constants {
     public static final String TAXES_VALUE_STRING = "77.608COP";
     public static final String ADDITIONAL_CHARGES_VALUE_STRING = "0.00COP";
     public static final String PURCHASE_SUCCESSFUL_MESSAGE_STRING = "Compra exitosa";
+    public static final String PURCHASE_UNSUCCESSFUL_MESSAGE_STRING = "Lo sentimos";
 }
