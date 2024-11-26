@@ -30,4 +30,6 @@ public class UserPage {
     public static final Target BTN_CONTINUE = Target.the("Continue button")
             .locatedBy("//*[@id=\"__next\"]/main/div/div[2]/div/div[3]/a/button");
 
+    public static final Target TOTAL_AMOUNT = Target.the("Total amount displayed")
+            .locatedBy("//*[@id=\"total-price-number\"]");
 }

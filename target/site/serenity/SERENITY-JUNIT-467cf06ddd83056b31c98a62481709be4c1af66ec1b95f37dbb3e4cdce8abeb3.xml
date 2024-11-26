@@ -1,1 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="Detailed display of purchase costs" skipped="0" tests="2" time="7.32" timestamp="2024-11-19 08:47:49"><testcase name="Display the detailed costs of the purchase"/><testcase name="Calculate the total amount"/></testsuite>
