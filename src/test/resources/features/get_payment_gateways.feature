@@ -19,3 +19,4 @@ Feature: Payment gateway selection
     Given that the user is on the payment page
     When the user does not select any payment gateway and tries to proceed
     Then the system should display a message requesting the selection of a payment gateway
+
